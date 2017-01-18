@@ -16,7 +16,7 @@ Spree::OrdersController.class_eval do
   def option_params_with_roles
     option_params = params[:options] || {}
 
-    role_ids = try_spree_current_user.try(:spree_role_ids)
+    role_ids = try_spree_current_user.try(:price_book_role_ids)
     return option_params.merge({ role_ids: role_ids }) if role_ids.present?
 
     option_params
